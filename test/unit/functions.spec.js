@@ -25,4 +25,30 @@ describe('functions', function ()
             });
         });
     });
+
+    describe('calculateDiscount', function ()
+    {
+        describe('when number is okey', function ()
+        {
+            it('should number is less than 18', function ()
+            {
+                expect(functions.calculateDiscount(10)).toBe(30)
+            });
+            it('should number is less than 99 but bigger than 18', function ()
+            {
+                expect(functions.calculateDiscount(20)).toBe(10);
+            });
+            it('should be number 100', function()
+            {
+                expect(functions.calculateDiscount(100)).toBe('Entrance free')
+            });
+        });
+        describe('when number in no okey', function(){
+            it('should be a text', function ()
+            {
+                expect(functions.calculateDiscount(-1)).toBe('I think you gave an incorrect age!');
+            });
+        });
+    });
 });
+
