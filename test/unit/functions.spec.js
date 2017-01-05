@@ -25,4 +25,24 @@ describe('functions', function ()
             });
         });
     });
+    describe('calculateDiscount', function ()
+    {
+        it('should return 30', function ()
+        {
+            expect(functions.calculateDiscount(16)).toBe(30);
+
+        });
+        it('should return 10', function ()
+        {
+            expect(functions.calculateDiscount(56)).toBe(10);
+        });
+        it('should entrance free', function ()
+        {
+            expect(functions.calculateDiscount(100)).toBe('Entrance free');
+        });
+        it('should return incorrect information', function ()
+        {
+            expect(functions.calculateDiscount()).toBe('I think you gave an incorrect age!')
+        });
+    });
 });
