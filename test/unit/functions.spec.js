@@ -25,4 +25,62 @@ describe('functions', function ()
             });
         });
     });
+    describe('calculateDiscount', function ()
+    {
+        describe('when age is greater or equal than 0 and less than 18  ', function ()
+        {
+            it('should return 30', function ()
+            {
+                expect(functions.calculateDiscount(16)).toBe(30);
+                expect(functions.calculateDiscount(10)).toBe(30);
+
+            });
+
+        });
+        describe('when age is value border ', function ()
+        {
+            it('should return 30 for value border ', function ()
+            {
+                expect(functions.calculateDiscount(0)).toBe(30);
+                expect(functions.calculateDiscount(17)).toBe(30);
+            });
+        });
+        describe('when age is greater or equal than 18 and less than 99', function ()
+        {
+            it('should return 10', function ()
+            {
+                expect(functions.calculateDiscount(56)).toBe(10);
+                expect(functions.calculateDiscount(20)).toBe(10);
+
+            });
+        });
+        describe('when age is greater or equal than 18 and less than 99 for value border', function ()
+        {
+            it('should return 10 for border value', function ()
+            {
+                expect(functions.calculateDiscount(18)).toBe(10);
+                expect(functions.calculateDiscount(99)).toBe(10);
+
+            });
+        });
+
+        describe('when age is 100', function ()
+        {
+            it('should entrance free', function ()
+            {
+                expect(functions.calculateDiscount(100)).toBe('Entrance free');
+            });
+        });
+
+        describe('when age is greater than 100 or less than 0', function ()
+        {
+            it('should return \'I think you gave an incorrect age!\' information', function ()
+            {
+                expect(functions.calculateDiscount(120)).toBe('I think you gave an incorrect age!');
+                expect(functions.calculateDiscount(-1)).toBe('I think you gave an incorrect age!')
+
+            });
+        });
+
+    });
 });
