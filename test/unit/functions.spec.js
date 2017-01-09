@@ -22,6 +22,7 @@ describe('functions', function ()
             it('should return \'You cannot divide by 0\' statement', function ()
             {
                 expect(functions.divide(5, 0)).toBe('You cannot divide by 0');
+
             });
         });
     });
@@ -30,21 +31,22 @@ describe('functions', function ()
     {
         describe('when number is okey', function ()
         {
-            it('should number is less than 18', function ()
+            it('should return 30', function ()
             {
                 expect(functions.calculateDiscount(10)).toBe(30)
             });
-            it('should number is less than 99 but bigger than 18', function ()
+            it('should return 10', function ()
             {
                 expect(functions.calculateDiscount(20)).toBe(10);
             });
-            it('should be number 100', function()
+            it('should return message', function()
             {
                 expect(functions.calculateDiscount(100)).toBe('Entrance free')
+
             });
         });
-        describe('when number in no okey', function(){
-            it('should be a text', function ()
+        describe('when number is false', function(){
+            it('should return text', function ()
             {
                 expect(functions.calculateDiscount(-1)).toBe('I think you gave an incorrect age!');
             });
