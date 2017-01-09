@@ -25,31 +25,31 @@ describe('functions', function ()
             });
         });
     });
-    describe('calculateDiscount', function ()
-    {
+
+
         describe('when age is greater than or equal to 0 and age is less than to 18', function ()
         {
-            it('should give 30', function ()
+            it('should return 30', function ()
             {
                 expect(functions.calculateDiscount(10)).toBe(30);
 
             });
         });
-    });
 
-    describe('calculateDiscount', function ()
-    {
+
+
+
         describe('when age is greater than or equal to 18 and age is less than or equal to 99', function ()
         {
-            it('should give 10', function ()
+            it('should return 10', function ()
             {
                 expect(functions.calculateDiscount(20)).toBe(10);
             });
         });
-    });
 
-    describe('calculateDiscount', function ()
-    {
+
+
+
         describe('when age is equal 100', function ()
         {
             it('should return \'Entrance free\'', function ()
@@ -58,17 +58,18 @@ describe('functions', function ()
 
             });
         });
-    });
 
-    describe('calculateDiscount', function ()
-    {
+
+
         describe('when age is less to 0 and age is greater to 100', function ()
         {
             it('should return \'I think you gave an incorrect age!\'', function ()
             {
                 expect(functions.calculateDiscount(102)).toBe('I think you gave an incorrect age!');
 
+
             });
         });
-    });
+
+
 });
