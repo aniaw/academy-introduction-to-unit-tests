@@ -25,4 +25,39 @@ describe('functions', function ()
             });
         });
     });
+
+    describe('calculateDiscount', function ()
+    {
+        describe('when age is less than 18', function ()
+        {
+            it('should return 30', function ()
+            {
+                expect(functions.calculateDiscount(0)).toBe(30);
+                expect(functions.calculateDiscount(17)).toBe(30);
+            });
+        });
+        describe('when age is less then 100 but equal or more then 18 ', function ()
+        {
+            it('should return 10', function ()
+            {
+                expect(functions.calculateDiscount(18)).toBe(10);
+                expect(functions.calculateDiscount(99)).toBe(10);
+            });
+        });
+        describe('when age is equal 100', function ()
+        {
+            it('should return \'Entrance free\'', function ()
+            {
+                expect(functions.calculateDiscount(100)).toBe('Entrance free');
+            });
+        });
+        describe('when age is incorrect', function ()
+        {
+            it('should return \'I think you gave an incorrect age!\'', function ()
+            {
+                expect(functions.calculateDiscount(102)).toBe('I think you gave an incorrect age!');
+                expect(functions.calculateDiscount('hello')).toBe('I think you gave an incorrect age!');
+            });
+        });
+    });
 });

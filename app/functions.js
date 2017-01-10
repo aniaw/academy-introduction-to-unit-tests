@@ -19,7 +19,7 @@
                 return 10;
             }
             else if (age === 100){
-                return 'Entrance free'
+                return 'Entrance free';
             }
             else {
                 return 'I think you gave an incorrect age!';
